@@ -1,0 +1,19 @@
+name: Powershell
+
+on: [push, pull_request]
+
+jobs:
+
+  test:
+    name: Powershell
+    
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: PowerShell script
+    # uses: Amadevus/pwsh-script@1f1751bbf3d1a92127bfc6c32403283625880cbf 
+        uses: Amadevus/pwsh-script@v2.0.1
+        with:
+         poweshell-version: 2.0.1
+      - name: setup job
+        run: .\shell.ps1
